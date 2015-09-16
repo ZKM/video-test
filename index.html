@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Video Test</title>
+    <style>
+        .container {
+            width: 980px;
+            margin: 30px auto;
+        }
+        
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: auto;
+            z-index: -100;
+        }
+        
+        .fullscreen-bg__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (min-aspect-ratio: 16/9) {
+            .fullscreen-bg__video {
+                height: 300%;
+                top: -100%;
+                z-index: -1;
+            }
+        }
+        
+        @media (max-aspect-ratio: 16/9) {
+            .fullscreen-bg__video {
+                width: 300%;
+                left: -100%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .fullscreen-bg {
+                background: url('img/videoframe.png') center center / cover no-repeat;
+            }
+            .fullscreen-bg__video {
+                display: none;
+            }
+        }
+        
+        p {
+            position: relative;
+            z-index: 1;
+            padding: 5rem;
+            background-color: rgba(255, 255, 255, 0.65);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="fullscreen-bg">
+        <div class="container">
+            <video loop muted autoplay poster="img/videoframe.png" class="fullscreen-bg__video">
+                <source src="video/big_buck_bunny.webm" type="video/webm">
+                <source src="video/big_buck_bunny.mp4" type="video/mp4">
+                <source src="video/big_buck_bunny.ogv" type="video/ogg">
+            </video>
+            <p id="top"><a href="#bottom">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. Maecenas id augue tempus, lobortis dui in, gravida libero. Praesent a imperdiet turpis. Fusce pretium mollis nunc eu efficitur. Vestibulum fermentum elit ultricies leo tincidunt, at pellentesque dolor euismod. Maecenas interdum vehicula libero, id convallis ex gravida vitae. Aliquam rhoncus efficitur turpis vel rutrum. Sed lobortis erat quis nulla condimentum, sed fermentum nisi porta. Nunc ullamcorper sollicitudin ligula, sed convallis sapien posuere at. Praesent sodales massa ac ligula viverra aliquet. Proin nulla augue, venenatis quis lacinia in, blandit quis nunc.</p>
+
+            <p>Donec eu vestibulum mauris. Donec vestibulum ornare odio vitae aliquam. Suspendisse eu lobortis nunc. Etiam quis massa ac risus vulputate placerat eget et eros. Sed feugiat hendrerit dui, ac convallis nisi eleifend et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec id consectetur orci, non posuere dui. Nulla egestas sem ac urna condimentum, id sodales erat molestie. Etiam porta sollicitudin vulputate. Duis eu scelerisque nibh.</p>
+
+            <p>Nam ullamcorper risus at mi tristique, ut lacinia dolor pulvinar. Nullam facilisis lacinia efficitur. Mauris nulla eros, auctor id maximus quis, porta in enim. Donec ut cursus nibh, in dignissim lectus. Maecenas tincidunt bibendum erat quis posuere. Cras sed augue et justo sollicitudin iaculis. Suspendisse quam tellus, dapibus et dapibus porttitor, consequat ac lorem.</p>
+
+            <p>Aenean bibendum pulvinar orci, id facilisis sem egestas in. Aenean viverra dapibus cursus. Phasellus non velit massa. Pellentesque quis libero lectus. Etiam ut nulla orci. Morbi rhoncus, urna et imperdiet sodales, leo dolor interdum tellus, at dictum magna metus convallis odio. Quisque pulvinar malesuada augue, quis placerat ipsum ornare sed. Phasellus id sapien ut felis tempus mollis. Nunc et feugiat nibh. Vestibulum consequat, lacus et congue dictum, ligula augue euismod enim, eu elementum lorem risus vitae lorem.</p>
+
+            <p id="bottom"><a href="#top">Lorem ipsum</a> egestas feugiat magna, vel tempor odio vehicula at. Cras at justo a enim pretium convallis. Pellentesque luctus cursus nisl, eget dignissim orci. Integer porttitor dolor in urna efficitur, eget tincidunt metus ullamcorper. Aliquam auctor id tellus vel pretium. Quisque imperdiet interdum bibendum. Quisque quam metus, eleifend in purus et, pulvinar bibendum libero. Vestibulum in fringilla nunc. Phasellus tempus justo augue, at sagittis lacus fermentum ac. Curabitur leo justo, semper eu purus ac, porta tincidunt ligula. Phasellus velit lacus, accumsan sit amet facilisis vel, tincidunt ut ligula. Proin dapibus ante felis, a faucibus magna commodo ac.</p>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
